@@ -1,0 +1,43 @@
+author:
+  email: <email>
+  name: <human_name>
+  pgp: <20 bytes hex>
+copyright: <any string>
+fund:
+  btc: <alphanumeric>
+  eth: <20 bytes hex, 0x prefix>
+  monero: <alphanumeric>
+license: <any string>
+locate:
+  rel: [<uri>]
+  tgzbase: [<uri>]
+  vcs: [<uri>]
+  www: [<uri>]
+maintainer:
+  email: <email>
+  name: <name>
+  pgp: <20 bytes hex>
+name: <slug>
+releases:
+  <semver version>:
+    archive: sha256:<32 bytes hex>
+    changelog: sha256:<32 bytes hex>
+    author:
+      name: <human_name>
+      email: <email>
+      pgp: <20 bytes hex>
+    contributors: [name: <human_name>, email: <email>, pgp: <20 bytes hex>]
+    maintainer:
+      name: <human_name>
+      email: <email>
+      pgp: <20 bytes hex>
+    timestamp: <number>
+sign:
+  ed22519: <hex>
+  rsa: <hex>
+  secp256k1: <hex>
+slug: <slug>
+summary: <any text>
+tech: <slug>
+vcs:
+  tag_prefix: <slug>

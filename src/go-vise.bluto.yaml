@@ -1,0 +1,59 @@
+---
+author:
+  email: dev@holbrook.no
+  name: 'Louis Holbrook'
+  pgp: 0826EDA1702D1E87C6E2875121D2E7BB88C2A746
+copyright: 'Louis Holbrook'
+fund:
+  btc: 1PfFbhKd32W6GfR6MLVifCrgqw47czA5LV
+  eth: 0x98d0D0a1992d9A0c3C84ccb92182A05c852972d1
+  monero: ''
+license: AGPL-3.0-or-later
+locate:
+  rel: []
+  tgzbase:
+    - https://defalsify.org/pub/src
+  vcs:
+    - git://holbrook.no/vise.git
+  www:
+    - https://holbrook.no/src/go-vise
+maintainer:
+  email: dev@holbrook.no
+  name: 'Louis Holbrook'
+  pgp: 0826EDA1702D1E87C6E2875121D2E7BB88C2A746
+name: vise
+releases:
+  0.1.0:
+    archive: sha256:019f8fa4041eeb0ad084d929c7a1bc7847690e0d7d8a449c47ff883a0900df17
+    author: 'Louis Holbrook'
+    changelog: sha256:aef85eee79297687edf57ba466746121b21b22f2a763c7d4471a901c35aae176
+    contributors: []
+    maintainer: 'Louis Holbrook'
+    timestamp: '1741552780'
+  0.2.0:
+    archive: sha256:cb0b60d3192428f50e3555c724834ee9d6fb680288e7df45cc4fbda8bbc1f70f
+    author: 'Louis Holbrook'
+    changelog: sha256:b6214a1ea98e096ac3ad604600f1a8f5a03a10becac3d290c636ac90ae6fc19e
+    contributors: []
+    maintainer: 'Louis Holbrook'
+    timestamp: '1741552795'
+  0.3.0:
+    archive: sha256:5dedb2fb7c4acf57d4ff5802cdfb71ab063e4556d1f4e690e311ad56e996454f
+    author: 'Louis Holbrook'
+    changelog: sha256:339cb179d7c2c684886a61f90ae223d60db20404fcd31722c0c783fd5c6fc967
+    contributors:
+      -
+        email: alfredmwaik@gmail.com
+        name: 'Alfred Kamanda'
+        pgp: E6120AA4FF232BAA133589BE7EA3D01708908703
+    maintainer: 'Louis Holbrook'
+    timestamp: 1741552803
+sign:
+  ed22519: ''
+  rsa: ''
+  secp256k1: ''
+slug: go-vise
+summary: 'Constrained size output virtual machine'
+tech: golang
+vcs:
+  tag_prefix: v
