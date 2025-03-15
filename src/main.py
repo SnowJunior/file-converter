@@ -3,11 +3,9 @@ import json
 import argparse
 import subprocess
 import sys
+import os
 
 def validate_json(json_file, schema_file):
-    """
-    Validate a JSON file against a schema using check-jsonschema.
-    """
     try:
         result = subprocess.run([
             "check-jsonschema", "--schemafile", schema_file, json_file
@@ -30,16 +28,24 @@ def yaml_to_json(yaml_file, json_file, schema_file=None):
     
     if schema_file:
         temp_json_file = "temp_output.json"
-        with open(temp_json_file, 'w') as j_file:
-            json.dump(yaml_data, j_file, indent=4)
-        
-        if not validate_json(temp_json_file, schema_file):
-            print("YAML to JSON conversion aborted due to validation failure.")
-            sys.exit(1)
-        else:
-            with open(json_file, 'w') as j_file:
+        try:
+            with open(temp_json_file, 'w') as j_file:
                 json.dump(yaml_data, j_file, indent=4)
-            print(f"Converted {yaml_file} to {json_file}")
+            
+            if not validate_json(temp_json_file, schema_file):
+                print("YAML to JSON conversion aborted due to validation failure.")
+                sys.exit(1)
+            else:
+                with open(json_file, 'w') as j_file:
+                    json.dump(yaml_data, j_file, indent=4)
+                print(f"Converted {yaml_file} to {json_file}")
+        finally:
+            if os.path.exists(temp_json_file):
+                os.remove(temp_json_file)
+    else:
+        with open(json_file, 'w') as j_file:
+            json.dump(yaml_data, j_file, indent=4)
+        print(f"Converted {yaml_file} to {json_file}")
 
 def json_to_yaml(json_file, yaml_file, schema_file=None):
     if schema_file:
