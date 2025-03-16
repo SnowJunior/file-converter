@@ -1,0 +1,8 @@
+{
+  "author": {
+    "email": "test@example.com",
+    "name": "Test Author"
+  },
+  "license": "MIT",
+  "name": "test-package"
+}

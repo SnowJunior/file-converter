@@ -1,0 +1,14 @@
+{
+  "author": {
+    "email": "test@example.com",
+    "name": "Test Author",
+    "pgp": "1234567890ABCDEF1234567890ABCDEF12345678"
+  },
+  "license": "MIT",
+  "name": "test-package",
+  "releases": {},
+  "slug": "test-package",
+  "summary": "A test package",
+  "tech": "python",
+  "extra_field": "should not be here"
+}
