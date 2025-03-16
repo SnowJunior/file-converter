@@ -1,1 +1,1 @@
-check-jsonschema
+check-jsonschema 0.31.3
