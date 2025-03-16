@@ -1,8 +1,8 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
   "type": "object",
-  "properties": {
-    "author": {
+  "$defs": {
+    "person": {
       "type": "object",
       "properties": {
         "email": { "type": "string", "format": "email" },
@@ -11,7 +11,11 @@
       },
       "required": ["email", "name", "pgp"],
       "additionalProperties": true
-    },
+    }
+  },
+  "properties": {
+    "author": { "$ref": "#/$defs/person" },
+    "maintainer": { "$ref": "#/$defs/person" },
     "copyright": { "type": "string" },
     "fund": {
       "type": "object",
@@ -32,16 +36,6 @@
         "www": { "type": "array", "items": { "type": "string", "format": "uri" } }
       }
     },
-    "maintainer": {
-      "type": "object",
-      "properties": {
-        "email": { "type": "string", "format": "email" },
-        "name": { "type": "string" },
-        "pgp": { "type": "string", "pattern": "^[a-fA-F0-9]{40}$" }
-      },
-      "required": ["email", "name", "pgp"],
-      "additionalProperties": true
-    },
     "name": { "type": "string", "pattern": "^[a-zA-Z0-9_-]+$" },
     "releases": {
       "type": "object",
@@ -51,38 +45,11 @@
           "properties": {
             "archive": { "type": "string", "pattern": "^sha256:[a-fA-F0-9]{64}$" },
             "changelog": { "type": "string", "pattern": "^sha256:[a-fA-F0-9]{64}$" },
-            "author": {
-              "type": "object",
-              "properties": {
-                "name": { "type": "string" },
-                "email": { "type": "string", "format": "email" },
-                "pgp": { "type": "string", "pattern": "^[a-fA-F0-9]{40}$" }
-              },
-              "required": ["name", "email", "pgp"],
-              "additionalProperties": true
-            },
+            "author": { "$ref": "#/$defs/person" },
+            "maintainer": { "$ref": "#/$defs/person" },
             "contributors": {
               "type": "array",
-              "items": {
-                "type": "object",
-                "properties": {
-                  "name": { "type": "string" },
-                  "email": { "type": "string", "format": "email" },
-                  "pgp": { "type": "string", "pattern": "^[a-fA-F0-9]{40}$" }
-                },
-                "required": ["name", "email", "pgp"],
-                "additionalProperties": true
-              }
-            },
-            "maintainer": {
-              "type": "object",
-              "properties": {
-                "name": { "type": "string" },
-                "email": { "type": "string", "format": "email" },
-                "pgp": { "type": "string", "pattern": "^[a-fA-F0-9]{40}$" }
-              },
-              "required": ["name", "email", "pgp"],
-              "additionalProperties": true
+              "items": { "$ref": "#/$defs/person" }
             },
             "timestamp": { "type": "number" }
           },

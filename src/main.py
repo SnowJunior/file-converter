@@ -63,9 +63,9 @@ def json_to_yaml(json_file, yaml_file, schema_file=None):
 
 def main():
     parser = argparse.ArgumentParser(description="Convert YAML to JSON and JSON back to YAML with optional validation.")
-    parser.add_argument("--yaml_to_json", nargs=2, metavar=("YAML_FILE", "JSON_FILE"),
+    parser.add_argument("--yaml-to-json", nargs=2, metavar=("YAML_FILE", "JSON_FILE"),
                         help="Convert YAML to JSON")
-    parser.add_argument("--json_to_yaml", nargs=2, metavar=("JSON_FILE", "YAML_FILE"), 
+    parser.add_argument("--json-to-yaml", nargs=2, metavar=("JSON_FILE", "YAML_FILE"), 
                         help="Convert JSON to YAML")
     parser.add_argument("--validate", nargs=2, metavar=("JSON_FILE", "SCHEMA_FILE"), 
                         help="Validate JSON against a schema")
